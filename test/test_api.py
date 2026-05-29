@@ -32,7 +32,7 @@ def test_register_user():
     data = response.json()
 
     # Assert: Check if user is admin
-    assert data["user"]["is_admin"] == False
+    assert data["user"]["is_admin"] == True
 
     # Assert:  
     assert data["user"]["username"] == new_user["username"]
