@@ -41,6 +41,33 @@ def test_register_user():
     assert data["user"]["username"] != "myawesomeuser" 
 
 
+def test_register_user2():
+    # Arrange: Create a random user
+    current_time = int(time.time() * 1000)
+
+    new_user = {
+        "username": f"user123_{current_time}",
+        "password": "pass123"
+        
+    }
+    # Act: Register the user
+    response = requests.post(f"{BASE_URL}/auth/register", json=new_user)
+
+    # Assert: Check for valid status code
+    assert response.status_code == 201
+
+    data = response.json()
+
+    # Assert: Check if user is admin
+    assert data["user"]["is_admin"] == False
+
+    # Assert:  
+    assert data["user"]["username"] == new_user["username"]
+
+    # Assert:Check if username is correct
+    assert data["user"]["username"] != "myawesomeuser" 
+
+
 
 def test_create_polls(auth_token):
     # Arrange
