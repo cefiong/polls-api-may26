@@ -83,7 +83,7 @@ def create_app():
 
 
     # Dev2Prod endpoint
-        @app.route('/api/dev_to_prod', methods=['GET'])
+    @app.route('/api/dev_to_prod', methods=['GET'])
     def dev2prod():
         return jsonify({'message': 'We completed the Dev2Prod course. Hurray!!!!'}), 200
 
