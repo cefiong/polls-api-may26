@@ -90,7 +90,7 @@ paths:
       tags:
         - Dev2Prod
       summary: Dev2Prod message
-      description: Print out Dev2Prod Message
+      description: Print out Dev2Prod Messages
       security: []
       responses:
         "200":
