@@ -12,7 +12,7 @@ info:
 servers:
   - url: http://127.0.0.1:5001
     description: Local development server
-  - url: https://example.com
+  - url: https://polls-api-yb1r.onrender.com
     description: Production server
 
 tags:
