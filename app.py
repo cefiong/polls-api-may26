@@ -81,9 +81,10 @@ def create_app():
     def health():
         return jsonify({'status': 'healthy'}), 200
 
-    @app.route("/api/dev_to_prod", methods=['GET'])
-    def get_dev_to_prod():
-        return jsonify({"message": "Hurry! We have completed the Dev to Prod Course"})
+    # Dev2Prod endpoint
+        @app.route('/api/dev_to_prod', methods=['GET'])
+    def dev2prod():
+        return jsonify({'message': 'We completed the Dev2Prod course. Hurray!!!!'}), 200
 
     return app
 
