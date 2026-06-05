@@ -52,17 +52,17 @@ jobs:
         username: ${{secrets.DOCKERHUB_USERNAME}}
         password: ${{secrets.DOCKERHUB_TOKEN}}
     
-    -name: Tag our docker image
+    - name: Tag our docker image
       run: |
         docker tag polls-api:latest ${{secrets.DOCKERHUB_USERNAME}}/polls-api:latest
         docker tag polls-api:latest ${{secrets.DOCKERHUB_USERNAME}}/polls-api:${{ github.sha }}
     
-    -name: Push to Docker hub
+    - name: Push to Docker hub
       run: |
         docker push ${{secrets.DOCKERHUB_USERNAME}}/polls-api:latest
         docker push ${{secrets.DOCKERHUB_USERNAME}}/polls-api:${{ github.sha }}
     
-    -name: Trigger render reploy
+    - name: Trigger render reploy
       run: |
         curl -X POST ${{secrets.RENDER_DEPLOY_HOOK}}
 
